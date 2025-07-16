@@ -1,9 +1,15 @@
-
+<script>
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
+  function toggleMenu() {
     navLinks.classList.toggle('show');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);      // for desktop
+  menuToggle.addEventListener('touchstart', toggleMenu); // for mobile
+</script>
+
   });
 
 
