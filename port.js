@@ -1,4 +1,12 @@
 
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
