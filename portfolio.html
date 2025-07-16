@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zafar | Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body class="relative">
+    <!-- Code Background -->
+    <div class="code-bg" id="codeBg"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">portfolio</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-indigo-900 hover:bg-opacity-50 transition-all duration-300 hover:scale-110 hover:text-indigo-300">Home</a>
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50 transition-all duration-300 hover:scale-110 hover:text-indigo-300">About</a>
+                        <a href="#skills" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50 transition-all duration-300 hover:scale-110 hover:text-indigo-300">Skills</a>
+                        <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50 transition-all duration-300 hover:scale-110 hover:text-indigo-300">Projects</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50 transition-all duration-300 hover:scale-110 hover:text-indigo-300">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="hamburger focus:outline-none">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-900 hover:bg-opacity-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-indigo-900 hover:bg-opacity-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <!-- Left Side - 3D Avatar -->
+            <div class="w-full md:w-1/2 mb-10 md:mb-0 perspective">
+                <div class="transform-3d floating" id="avatarContainer">
+                    <div class="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 glow-box flex items-center justify-center">
+                        <div class="w-60 h-60 rounded-full bg-gray-800 overflow-hidden border-4 border-indigo-300">
+                            <img src="c:\Users\Other\Downloads\file_00000000df1061f798760a4ee5b1388a.png" alt="Zafar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Text Content -->
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500 glow">Zafar Ali</span>
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-semibold mb-6 text-gray-300">
+                    <span id="typed" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-400"></span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
+                    I’m a passionate Web Developer, and I craft modern, responsive, and user-friendly websites — built to impress and perform.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-white font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 glow-box">
+                        Hire Me
+                    </a>
+                    <a href="#projects" class="px-8 py-3 border-2 border-indigo-500 rounded-full text-indigo-300 font-semibold hover:bg-indigo-900 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105">
+                        View Work
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Tech Elements -->
+        <div class="absolute bottom-10 left-0 w-full flex justify-center">
+            <div class="flex space-x-4">
+                <div class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center floating" style="animation-delay: 0s;">
+                    <i class="fab fa-html5 text-2xl text-orange-500"></i>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center floating" style="animation-delay: 0.5s;">
+                    <i class="fab fa-css3-alt text-2xl text-blue-500"></i>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center floating" style="animation-delay: 1s;">
+                    <i class="fab fa-js text-2xl text-yellow-400"></i>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center floating" style="animation-delay: 1.5s;">
+                    <i class="fab fa-react text-2xl text-blue-400"></i>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center floating" style="animation-delay: 2s;">
+                    <i class="fab fa-node-js text-2xl text-green-500"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 bg-opacity-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-white">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">About</span> Me
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Side - 3D Photo Frame -->
+                <div class="w-full lg:w-1/3 perspective">
+                    <div class="transform-3d rotate-y-15 hover-3d transition-all duration-500">
+                        <div class="relative glow-box rounded-xl overflow-hidden border-2 border-indigo-400">
+                            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Developer" class="w-full h-auto">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <h3 class="text-2xl font-bold text-white">Zafar Ali</h3>
+                                <p class="text-indigo-300">Full Stack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - About Text -->
+                <div class="w-full lg:w-2/3 perspective">
+                    <div class="transform-3d rotate-y--15 hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-8 rounded-xl border border-indigo-500 border-opacity-30">
+                        <h3 class="text-2xl font-bold text-white mb-4">Who am I?</h3>
+                        <p class="text-gray-300 mb-6">
+                            Hi, I’m Zafar  — a passionate and self-driven Web Developer with a strong interest in building interactive websites and digital experiences. I'm currently exploring the tech world as a fresher, eager to turn ideas into fully functional web products
+                        </p>
+                        <p class="text-gray-300 mb-6">
+                    I specialize in web development and web app creation, using technologies like HTML, CSS, JavaScript, and PHP. I also design user interfaces in Figma, turning concepts into beautiful, clean designs. Recently, I’ve been diving into Android app development, expanding my skill set across platforms.
+
+                        </p>
+                        <p class="text-gray-300 mb-8">
+                            Even without professional experience, I’m committed to learning and growing every day. My goal is to deliver responsive, user-friendly solutions that solve real problems. I believe in clean code, smart design, and a positive user experience — and I’m ready to prove myself through every project I build.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></div>
+                                <span class="text-gray-300">Full Stack Development</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                                <span class="text-gray-300">Figma UI/UX</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-blue-400 mr-2"></div>
+                                <span class="text-gray-300">Database devloper</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
+                                <span class="text-gray-300">web app or Android devloper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-white">
+                My <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Skills</span>
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Side - 3D Developer Avatar -->
+                <div class="w-full lg:w-1/3 perspective hidden lg:block">
+                    <div class="transform-3d floating" style="animation-delay: 0.2s;">
+                        <div class="relative">
+                            <div class="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 glow-box flex items-center justify-center">
+                                <div class="w-60 h-60 rounded-full bg-gray-800 overflow-hidden border-4 border-indigo-300">
+                                    <img src="c:\Users\Other\Downloads\file_000000004e8c61f5b900fd5f915b33ac.png" alt="Developer" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-6 left-0 right-0 text-center">
+                                <div class="inline-block px-4 py-2 bg-indigo-900 bg-opacity-50 backdrop-blur-sm rounded-full border border-indigo-400">
+                                    <span class="text-white font-medium">Full Stack Skills</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Skill Cards -->
+                <div class="w-full lg:w-2/3">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <!-- HTML -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.1s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">HTML5</h3>
+                                <p class="text-gray-400 text-sm">I use HTML to structure clean and semantic web pages.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- CSS -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.2s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">CSS3</h3>
+                                <p class="text-gray-400 text-sm">I style websites using CSS to make them responsive and visually appealing</p>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.3s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-js text-4xl text-yellow-400"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">JavaScript</h3>
+                                <p class="text-gray-400 text-sm">I add interactivity and dynamic behavior to websites using JavaScript.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- React -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.4s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-react text-4xl text-blue-400"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">React.js</h3>
+                                <p class="text-gray-400 text-sm">I build fast and reusable UI components using React for modern web apps.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Node.js -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.5s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-angular"></i>
+
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Angularjs</h3>
+                                <p class="text-gray-400 text-sm">I use AngularJS to build dynamic, single-page applications with efficient two-way data binding.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- PHP -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.6s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fab fa-php text-4xl text-purple-500"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">PHP</h3>
+                                <p class="text-gray-400 text-sm">I use PHP to develop server-side logic and connect front-end with databases.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- MySQL -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.7s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-database text-4xl text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">MySQL</h3>
+                                <p class="text-gray-400 text-sm">I manage and interact with databases to store and retrieve structured data efficiently.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Git -->
+                        <div class="perspective">
+                            <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-indigo-500 border-opacity-30 text-center glow-box floating" style="animation-delay: 0.8s;">
+                                <div class="w-16 h-16 mx-auto mb-4 bg-indigo-900 bg-opacity-30 rounded-full flex items-center justify-center">
+                                <i class="fab fa-android"></i>
+
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Android devloper</h3>
+                                <p class="text-gray-400 text-sm">I develop Android applications with clean UI and smooth, responsive user experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Particles background -->
+      <section id="projects" class="py-20 bg-gray-900 bg-opacity-50 relative overflow-hidden"></section>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-white">
+                My <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Projects</span>
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <!-- Project Card 1 -->
+            <div class="project-card float-animation" style="transform: rotateY(-5deg) rotateX(5deg);">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Neon Dashboard" class="project-image">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-chart-line text-purple-500 mr-3"></i>
+                        <h3 class="title-font text-xl font-bold">Neon Dashboard</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">A real-time analytics dashboard with interactive charts and customizable widgets built with React, D3.js, and Node.js.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="demo-btn text-white px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                        <a href="#" class="code-btn px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="project-card float-animation-2" style="transform: rotateY(0deg) rotateX(8deg);">
+                <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                     alt="Crypto Tracker" class="project-image">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fab fa-bitcoin text-purple-500 mr-3"></i>
+                        <h3 class="title-font text-xl font-bold">Crypto Tracker</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Cryptocurrency tracking application with live price updates, portfolio management, and historical data visualization.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="demo-btn text-white px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                        <a href="#" class="code-btn px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 3 -->
+            <div class="project-card float-animation-3" style="transform: rotateY(5deg) rotateX(5deg);">
+                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="AI Chat App" class="project-image">
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-robot text-purple-500 mr-3"></i>
+                        <h3 class="title-font text-xl font-bold">AI Chat App</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6">Next-generation conversational AI interface with natural language processing and personalized responses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="demo-btn text-white px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                        <a href="#" class="code-btn px-5 py-2 rounded-lg font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16">
+            <button class="border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium">
+                View All Projects <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+    
+   
+</body>
+</html>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-white">
+                Get In <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Touch</span>
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Left Side - Contact Info -->
+                <div class="w-full lg:w-1/3 perspective">
+                    <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-8 rounded-xl border border-indigo-500 border-opacity-30 h-full glow-box">
+                        <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Email</h4>
+                                    <a href="mailto:zahid@example.com" class="text-gray-400 hover:text-indigo-300 transition-colors">carkaali97@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Phone</h4>
+                                    <a href="tel:+1234567890" class="text-gray-400 hover:text-indigo-300 transition-colors">+923190392584</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Location</h4>
+                                    <p class="text-gray-400">Pakistan, karachi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="text-lg font-semibold text-white mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-icon w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 hover:bg-indigo-700">
+                                    <i class="fab fa-whatsapp"></i>
+
+                                </a>
+                                <a href="#" class="social-icon w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 hover:bg-indigo-700">
+                                   <i class="fab fa-facebook-f"></i>
+
+                                </a>
+                                <a href="#" class="social-icon w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 hover:bg-indigo-700">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon w-10 h-10 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 hover:bg-indigo-700">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Contact Form -->
+                <div class="w-full lg:w-2/3 perspective">
+                    <div class="transform-3d hover-3d transition-all duration-500 bg-gray-800 bg-opacity-50 backdrop-blur-sm p-8 rounded-xl border border-indigo-500 border-opacity-30 glow-box">
+                        <h3 class="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white input-glow transition-all" placeholder="Enter your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white input-glow transition-all" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white input-glow transition-all" placeholder="Enter subject">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white input-glow transition-all" placeholder="Enter your message"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-white font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 glow-box">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Social Icons -->
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center space-x-6">
+            <a href="#" class="social-icon floating w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 border border-indigo-500" style="animation-delay: 0.1s;">
+                <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="#" class="social-icon floating w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 border border-indigo-500" style="animation-delay: 0.3s;">
+                <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="#" class="social-icon floating w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 border border-indigo-500" style="animation-delay: 0.5s;">
+                <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="#" class="social-icon floating w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-400 border border-indigo-500" style="animation-delay: 0.7s;">
+                <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 bg-opacity-70 backdrop-blur-sm border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Zafar</span>
+                    <p class="text-gray-400 text-sm mt-1">Full Stack Web Developer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Zafar Ali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
